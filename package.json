@@ -1,5 +1,5 @@
 {
-  "name": "todo-api",
+  "name": "shop",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -11,16 +11,25 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.15.0",
-    "@strapi/plugin-users-permissions": "4.15.0",
-    "@strapi/plugin-i18n": "4.15.0",
-    "better-sqlite3": "8.6.0"
+    "@strapi/strapi": "4.17.1",
+    "@strapi/plugin-users-permissions": "4.17.1",
+    "@strapi/plugin-i18n": "4.17.1",
+    "@strapi/plugin-cloud": "4.17.1",
+    "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "styled-components": "5.3.3"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "7f8b67b3-7676-49be-ab27-8fc4900e9db7"
+    "uuid": "c3e26425-dcec-4125-adc4-e35775446e50"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }
