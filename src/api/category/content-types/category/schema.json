@@ -5,11 +5,11 @@
     "singularName": "category",
     "pluralName": "categories",
     "displayName": "Category",
-    "name": "category"
+    "name": "category",
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "name": {
@@ -24,6 +24,19 @@
       "relation": "manyToMany",
       "target": "api::product.product",
       "inversedBy": "categories"
+    },
+    "product_Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "tag": {
+      "type": "text"
     }
   }
 }
