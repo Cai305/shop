@@ -1,4 +1,11 @@
 module.exports=[
+   settings: {
+    cors: {
+      enabled: true,
+      origin: ['*'], //allow all origins
+      headers: ['*'], //allow all headers
+    },
+  },
   'strapi::errors' ,
   {
     name: 'strapi::security',
