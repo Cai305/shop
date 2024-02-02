@@ -910,6 +910,33 @@ export interface PluginStrapiStripeSsPayment extends Schema.CollectionType {
   };
 }
 
+export interface ApiCartCart extends Schema.CollectionType {
+  collectionName: 'carts';
+  info: {
+    singularName: 'cart';
+    pluralName: 'carts';
+    displayName: 'cart';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    product_id: Attribute.UID;
+    product_number: Attribute.Integer;
+    product_name: Attribute.String;
+    product_quantity: Attribute.Integer;
+    status: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::cart.cart', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::cart.cart', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1080,6 +1107,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::strapi-stripe.ss-product': PluginStrapiStripeSsProduct;
       'plugin::strapi-stripe.ss-payment': PluginStrapiStripeSsPayment;
+      'api::cart.cart': ApiCartCart;
       'api::category.category': ApiCategoryCategory;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::product.product': ApiProductProduct;
