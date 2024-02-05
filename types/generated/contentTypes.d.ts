@@ -927,7 +927,7 @@ export interface ApiCartCart extends Schema.CollectionType {
     product_quantity: Attribute.Integer;
     status: Attribute.String;
     product_image: Attribute.String;
-    price: Attribute.Boolean;
+    product_price: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

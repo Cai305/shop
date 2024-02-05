@@ -27,8 +27,8 @@
     "product_image": {
       "type": "string"
     },
-    "price": {
-      "type": "boolean"
+    "product_price": {
+      "type": "decimal"
     }
   }
 }
