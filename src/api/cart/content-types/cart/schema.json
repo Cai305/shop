@@ -26,6 +26,9 @@
     },
     "status": {
       "type": "string"
+    },
+    "product_image": {
+      "type": "string"
     }
   }
 }

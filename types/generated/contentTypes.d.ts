@@ -927,6 +927,7 @@ export interface ApiCartCart extends Schema.CollectionType {
     product_name: Attribute.String;
     product_quantity: Attribute.Integer;
     status: Attribute.String;
+    product_image: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -976,12 +977,111 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiCollectionCollection extends Schema.CollectionType {
+  collectionName: 'collections';
+  info: {
+    singularName: 'collection';
+    pluralName: 'collections';
+    displayName: 'collection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title1: Attribute.String;
+    image1: Attribute.Media;
+    title2: Attribute.String;
+    image2: Attribute.Media;
+    from_price: Attribute.BigInteger;
+    title3: Attribute.String;
+    from_price2: Attribute.Decimal;
+    from_price1: Attribute.Decimal;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::collection.collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::collection.collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiComboCombo extends Schema.CollectionType {
+  collectionName: 'combos';
+  info: {
+    singularName: 'combo';
+    pluralName: 'combos';
+    displayName: 'combo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_image: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::combo.combo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::combo.combo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeroVideoHeroVideo extends Schema.CollectionType {
+  collectionName: 'hero_videos';
+  info: {
+    singularName: 'hero-video';
+    pluralName: 'hero-videos';
+    displayName: 'hero_video';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    video: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hero-video.hero-video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hero-video.hero-video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNavbarNavbar extends Schema.CollectionType {
   collectionName: 'navbars';
   info: {
     singularName: 'navbar';
     pluralName: 'navbars';
     displayName: 'navbar';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -989,6 +1089,9 @@ export interface ApiNavbarNavbar extends Schema.CollectionType {
   attributes: {
     logo: Attribute.Media;
     companyName: Attribute.String;
+    link1: Attribute.String;
+    link2: Attribute.String;
+    link3: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1109,6 +1212,9 @@ declare module '@strapi/types' {
       'plugin::strapi-stripe.ss-payment': PluginStrapiStripeSsPayment;
       'api::cart.cart': ApiCartCart;
       'api::category.category': ApiCategoryCategory;
+      'api::collection.collection': ApiCollectionCollection;
+      'api::combo.combo': ApiComboCombo;
+      'api::hero-video.hero-video': ApiHeroVideoHeroVideo;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::product.product': ApiProductProduct;
       'api::tproduct.tproduct': ApiTproductTproduct;
