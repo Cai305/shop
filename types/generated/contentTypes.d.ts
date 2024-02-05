@@ -922,12 +922,12 @@ export interface ApiCartCart extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    product_id: Attribute.UID;
-    product_number: Attribute.Integer;
+    user_id: Attribute.Integer;
     product_name: Attribute.String;
     product_quantity: Attribute.Integer;
     status: Attribute.String;
     product_image: Attribute.String;
+    price: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

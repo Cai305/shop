@@ -12,10 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "product_id": {
-      "type": "uid"
-    },
-    "product_number": {
+    "user_id": {
       "type": "integer"
     },
     "product_name": {
@@ -29,6 +26,9 @@
     },
     "product_image": {
       "type": "string"
+    },
+    "price": {
+      "type": "boolean"
     }
   }
 }
