@@ -1028,6 +1028,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     collection_image2: Attribute.String;
     from_price1: Attribute.Decimal;
     from_price2: Attribute.Decimal;
+    collection_image3: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

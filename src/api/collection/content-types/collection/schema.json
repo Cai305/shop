@@ -26,6 +26,9 @@
     },
     "from_price2": {
       "type": "decimal"
+    },
+    "collection_image3": {
+      "type": "string"
     }
   }
 }
