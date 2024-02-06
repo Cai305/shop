@@ -1017,20 +1017,17 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     singularName: 'collection';
     pluralName: 'collections';
     displayName: 'collection';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title1: Attribute.String;
-    image1: Attribute.Media;
-    title2: Attribute.String;
-    image2: Attribute.Media;
-    from_price: Attribute.BigInteger;
-    title3: Attribute.String;
-    from_price2: Attribute.Decimal;
+    collection_name: Attribute.String;
+    collection_image1: Attribute.String;
+    collection_image2: Attribute.String;
     from_price1: Attribute.Decimal;
-    image: Attribute.Media;
+    from_price2: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
