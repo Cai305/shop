@@ -1123,9 +1123,12 @@ export interface ApiNavbarNavbar extends Schema.CollectionType {
   attributes: {
     logo: Attribute.Media;
     companyName: Attribute.String;
-    link1: Attribute.String;
-    link2: Attribute.String;
-    link3: Attribute.String;
+    MEN_link: Attribute.String;
+    Standard_Range_link: Attribute.String;
+    Womanlink: Attribute.String;
+    MEN: Attribute.Media;
+    Woman: Attribute.Media;
+    Standard_Range: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

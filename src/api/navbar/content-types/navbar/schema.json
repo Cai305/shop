@@ -23,14 +23,44 @@
     "companyName": {
       "type": "string"
     },
-    "link1": {
+    "MEN_link": {
       "type": "string"
     },
-    "link2": {
+    "Standard_Range_link": {
       "type": "string"
     },
-    "link3": {
+    "Womanlink": {
       "type": "string"
+    },
+    "MEN": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Woman": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Standard_Range": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
