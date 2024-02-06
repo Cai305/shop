@@ -977,6 +977,40 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiCheckoutCheckout extends Schema.CollectionType {
+  collectionName: 'checkouts';
+  info: {
+    singularName: 'checkout';
+    pluralName: 'checkouts';
+    displayName: 'checkout';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    user_id: Attribute.String;
+    product_id: Attribute.String;
+    product_price: Attribute.String;
+    product_title: Attribute.String;
+    product_quantity: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::checkout.checkout',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::checkout.checkout',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCollectionCollection extends Schema.CollectionType {
   collectionName: 'collections';
   info: {
@@ -1212,6 +1246,7 @@ declare module '@strapi/types' {
       'plugin::strapi-stripe.ss-payment': PluginStrapiStripeSsPayment;
       'api::cart.cart': ApiCartCart;
       'api::category.category': ApiCategoryCategory;
+      'api::checkout.checkout': ApiCheckoutCheckout;
       'api::collection.collection': ApiCollectionCollection;
       'api::combo.combo': ApiComboCombo;
       'api::hero-video.hero-video': ApiHeroVideoHeroVideo;
