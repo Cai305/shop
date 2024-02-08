@@ -1207,6 +1207,7 @@ export interface ApiTproductTproduct extends Schema.CollectionType {
     tag: Attribute.Boolean & Attribute.Required;
     category: Attribute.String;
     image: Attribute.Media;
+    subCategory: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

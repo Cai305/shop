@@ -14,10 +14,20 @@ export interface CustomCustomField extends Schema.Component {
   };
 }
 
+export interface CustomSubCategory extends Schema.Component {
+  collectionName: 'components_custom_sub_categories';
+  info: {
+    displayName: 'subCategory';
+    icon: 'bulletList';
+  };
+  attributes: {};
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'custom.custom-field': CustomCustomField;
+      'custom.sub-category': CustomSubCategory;
     }
   }
 }
