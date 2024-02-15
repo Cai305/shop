@@ -953,11 +953,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     slug: Attribute.UID<'api::category.category', 'name'>;
-    products: Attribute.Relation<
-      'api::category.category',
-      'manyToMany',
-      'api::product.product'
-    >;
     product_Image: Attribute.Media;
     tag: Attribute.Text;
     createdAt: Attribute.DateTime;
@@ -1107,6 +1102,37 @@ export interface ApiHeroVideoHeroVideo extends Schema.CollectionType {
   };
 }
 
+export interface ApiHerosBunnerHerosBunner extends Schema.CollectionType {
+  collectionName: 'heros_bunners';
+  info: {
+    singularName: 'heros-bunner';
+    pluralName: 'heros-bunners';
+    displayName: 'heros_bunner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner_title: Attribute.String;
+    image: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::heros-bunner.heros-bunner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::heros-bunner.heros-bunner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNavbarNavbar extends Schema.CollectionType {
   collectionName: 'navbars';
   info: {
@@ -1152,26 +1178,26 @@ export interface ApiProductProduct extends Schema.CollectionType {
     pluralName: 'products';
     displayName: 'Product';
     name: 'product';
+    description: '';
   };
   options: {
-    increments: true;
-    timestamps: true;
+    draftAndPublish: false;
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.String & Attribute.Required;
-    price: Attribute.Float;
-    image: Attribute.Media;
-    slug: Attribute.UID<'api::product.product', 'title'>;
-    categories: Attribute.Relation<
-      'api::product.product',
-      'manyToMany',
-      'api::category.category'
+    product_image: Attribute.Media;
+    product_title: Attribute.String;
+    product_description: Attribute.Text;
+    product_code: Attribute.String;
+    product_fabric: Attribute.String;
+    product_varient: Attribute.Enumeration<
+      ['Ex:', 'morning', 'noon', 'day', 'night']
     >;
-    Custom_field: Attribute.Component<'custom.custom-field', true>;
-    status: Attribute.Enumeration<['draft', 'published']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'published'>;
+    product_material: Attribute.String;
+    product_price: Attribute.Decimal;
+    product_primary_class: Attribute.String;
+    product_category: Attribute.String;
+    product_subcategory: Attribute.String;
+    product_subclass: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1252,6 +1278,7 @@ declare module '@strapi/types' {
       'api::collection.collection': ApiCollectionCollection;
       'api::combo.combo': ApiComboCombo;
       'api::hero-video.hero-video': ApiHeroVideoHeroVideo;
+      'api::heros-bunner.heros-bunner': ApiHerosBunnerHerosBunner;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::product.product': ApiProductProduct;
       'api::tproduct.tproduct': ApiTproductTproduct;

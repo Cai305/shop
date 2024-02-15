@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "heros_bunners",
+  "info": {
+    "singularName": "heros-bunner",
+    "pluralName": "heros-bunners",
+    "displayName": "heros_bunner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner_title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    }
+  }
+}

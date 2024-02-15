@@ -5,54 +5,62 @@
     "singularName": "product",
     "pluralName": "products",
     "displayName": "Product",
-    "name": "product"
+    "name": "product",
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "string",
-      "required": true
-    },
-    "price": {
-      "type": "float"
-    },
-    "image": {
+    "product_image": {
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos",
+        "audios"
       ],
       "type": "media",
       "multiple": false
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
+    "product_title": {
+      "type": "string"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "mappedBy": "products"
+    "product_description": {
+      "type": "text"
     },
-    "Custom_field": {
-      "type": "component",
-      "repeatable": true,
-      "component": "custom.custom-field"
+    "product_code": {
+      "type": "string"
     },
-    "status": {
+    "product_fabric": {
+      "type": "string"
+    },
+    "product_varient": {
       "type": "enumeration",
       "enum": [
-        "draft",
-        "published"
-      ],
-      "default": "published",
-      "required": true
+        "Ex:",
+        "morning",
+        "noon",
+        "day",
+        "night"
+      ]
+    },
+    "product_material": {
+      "type": "string"
+    },
+    "product_price": {
+      "type": "decimal"
+    },
+    "product_primary_class": {
+      "type": "string"
+    },
+    "product_category": {
+      "type": "string"
+    },
+    "product_subcategory": {
+      "type": "string"
+    },
+    "product_subclass": {
+      "type": "string"
     }
   }
 }

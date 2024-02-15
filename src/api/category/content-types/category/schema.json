@@ -19,12 +19,6 @@
       "type": "uid",
       "targetField": "name"
     },
-    "products": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::product.product",
-      "inversedBy": "categories"
-    },
     "product_Image": {
       "allowedTypes": [
         "images",
