@@ -1252,6 +1252,40 @@ export interface ApiTproductTproduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiWatchlistWatchlist extends Schema.CollectionType {
+  collectionName: 'watchlists';
+  info: {
+    singularName: 'watchlist';
+    pluralName: 'watchlists';
+    displayName: 'Watchlist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    product_name: Attribute.String;
+    user_id: Attribute.String;
+    status: Attribute.String;
+    product_quantity: Attribute.String;
+    product_image: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::watchlist.watchlist',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::watchlist.watchlist',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1282,6 +1316,7 @@ declare module '@strapi/types' {
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::product.product': ApiProductProduct;
       'api::tproduct.tproduct': ApiTproductTproduct;
+      'api::watchlist.watchlist': ApiWatchlistWatchlist;
     }
   }
 }
