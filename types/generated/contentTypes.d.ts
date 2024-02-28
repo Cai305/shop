@@ -928,6 +928,7 @@ export interface ApiCartCart extends Schema.CollectionType {
     status: Attribute.String;
     product_image: Attribute.String;
     product_price: Attribute.Decimal;
+    product_code: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1065,6 +1066,37 @@ export interface ApiComboCombo extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::combo.combo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCreditCredit extends Schema.CollectionType {
+  collectionName: 'credits';
+  info: {
+    singularName: 'credit';
+    pluralName: 'credits';
+    displayName: 'credit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    username: Attribute.String;
+    amount: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::credit.credit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::credit.credit',
       'oneToOne',
       'admin::user'
     > &
@@ -1311,6 +1343,7 @@ declare module '@strapi/types' {
       'api::checkout.checkout': ApiCheckoutCheckout;
       'api::collection.collection': ApiCollectionCollection;
       'api::combo.combo': ApiComboCombo;
+      'api::credit.credit': ApiCreditCredit;
       'api::hero-video.hero-video': ApiHeroVideoHeroVideo;
       'api::heros-bunner.heros-bunner': ApiHerosBunnerHerosBunner;
       'api::navbar.navbar': ApiNavbarNavbar;
