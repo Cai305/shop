@@ -929,6 +929,7 @@ export interface ApiCartCart extends Schema.CollectionType {
     product_image: Attribute.String;
     product_price: Attribute.Decimal;
     product_code: Attribute.String;
+    product_Other_Image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1230,6 +1231,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     product_category: Attribute.String;
     product_subcategory: Attribute.String;
     product_subclass: Attribute.String;
+    product_Other_Image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

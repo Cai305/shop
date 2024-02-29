@@ -32,6 +32,16 @@
     },
     "product_code": {
       "type": "string"
+    },
+    "product_Other_Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
