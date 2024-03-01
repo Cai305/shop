@@ -34,14 +34,18 @@
       "type": "string"
     },
     "product_Other_Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "user_iid": {
+      "type": "string"
     }
   }
 }
