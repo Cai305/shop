@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ab_credits",
+  "info": {
+    "singularName": "ab-credit",
+    "pluralName": "ab-credits",
+    "displayName": "AbCredit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "type": "string"
+    },
+    "balance": {
+      "type": "decimal",
+      "default": 10000,
+      "min": 0
+    }
+  }
+}

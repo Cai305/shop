@@ -15,37 +15,9 @@
     "user_id": {
       "type": "integer"
     },
-    "product_name": {
-      "type": "string"
-    },
-    "product_quantity": {
-      "type": "integer"
-    },
-    "status": {
-      "type": "string"
-    },
-    "product_image": {
-      "type": "string"
-    },
-    "product_price": {
-      "type": "decimal"
-    },
-    "product_code": {
-      "type": "string"
-    },
-    "product_Other_Image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "user_iid": {
-      "type": "string"
+    "cart_product": {
+      "type": "json",
+      "required": false
     }
   }
 }

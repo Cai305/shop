@@ -910,6 +910,41 @@ export interface PluginStrapiStripeSsPayment extends Schema.CollectionType {
   };
 }
 
+export interface ApiAbCreditAbCredit extends Schema.CollectionType {
+  collectionName: 'ab_credits';
+  info: {
+    singularName: 'ab-credit';
+    pluralName: 'ab-credits';
+    displayName: 'AbCredit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    user_id: Attribute.String;
+    balance: Attribute.Decimal &
+      Attribute.SetMinMax<{
+        min: 0;
+      }> &
+      Attribute.DefaultTo<10000>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ab-credit.ab-credit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ab-credit.ab-credit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCartCart extends Schema.CollectionType {
   collectionName: 'carts';
   info: {
@@ -923,14 +958,7 @@ export interface ApiCartCart extends Schema.CollectionType {
   };
   attributes: {
     user_id: Attribute.Integer;
-    product_name: Attribute.String;
-    product_quantity: Attribute.Integer;
-    status: Attribute.String;
-    product_image: Attribute.String;
-    product_price: Attribute.Decimal;
-    product_code: Attribute.String;
-    product_Other_Image: Attribute.Media;
-    user_iid: Attribute.String;
+    cart_product: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -981,16 +1009,15 @@ export interface ApiCheckoutCheckout extends Schema.CollectionType {
     singularName: 'checkout';
     pluralName: 'checkouts';
     displayName: 'checkout';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     user_id: Attribute.String;
-    product_id: Attribute.String;
-    product_price: Attribute.String;
-    product_title: Attribute.String;
-    product_quantity: Attribute.String;
+    products: Attribute.JSON;
+    total_amount: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1341,6 +1368,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::strapi-stripe.ss-product': PluginStrapiStripeSsProduct;
       'plugin::strapi-stripe.ss-payment': PluginStrapiStripeSsPayment;
+      'api::ab-credit.ab-credit': ApiAbCreditAbCredit;
       'api::cart.cart': ApiCartCart;
       'api::category.category': ApiCategoryCategory;
       'api::checkout.checkout': ApiCheckoutCheckout;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "checkout",
     "pluralName": "checkouts",
-    "displayName": "checkout"
+    "displayName": "checkout",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,17 +15,11 @@
     "user_id": {
       "type": "string"
     },
-    "product_id": {
-      "type": "string"
+    "products": {
+      "type": "json"
     },
-    "product_price": {
-      "type": "string"
-    },
-    "product_title": {
-      "type": "string"
-    },
-    "product_quantity": {
-      "type": "string"
+    "total_amount": {
+      "type": "decimal"
     }
   }
 }
