@@ -20,7 +20,7 @@
       "default": 10000,
       "min": 0
     },
-    "user_iid": {
+    "username": {
       "type": "string"
     }
   }
