@@ -916,6 +916,7 @@ export interface ApiAbCreditAbCredit extends Schema.CollectionType {
     singularName: 'ab-credit';
     pluralName: 'ab-credits';
     displayName: 'AbCredit';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -927,6 +928,7 @@ export interface ApiAbCreditAbCredit extends Schema.CollectionType {
         min: 0;
       }> &
       Attribute.DefaultTo<10000>;
+    user_iid: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

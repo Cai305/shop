@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ab-credit",
     "pluralName": "ab-credits",
-    "displayName": "AbCredit"
+    "displayName": "AbCredit",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,9 @@
       "type": "decimal",
       "default": 10000,
       "min": 0
+    },
+    "user_iid": {
+      "type": "string"
     }
   }
 }
