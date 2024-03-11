@@ -18,6 +18,9 @@
     "cart_product": {
       "type": "json",
       "required": false
+    },
+    "username": {
+      "type": "string"
     }
   }
 }
