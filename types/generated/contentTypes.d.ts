@@ -961,6 +961,7 @@ export interface ApiCartCart extends Schema.CollectionType {
   attributes: {
     user_id: Attribute.Integer;
     cart_product: Attribute.JSON;
+    username: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
