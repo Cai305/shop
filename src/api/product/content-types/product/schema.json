@@ -64,11 +64,18 @@
       "type": "string"
     },
     "product_Other_Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "product_color": {
+      "type": "string"
+    },
+    "product_type": {
+      "type": "string"
     }
   }
 }

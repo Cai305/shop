@@ -1263,6 +1263,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
     product_subcategory: Attribute.String;
     product_subclass: Attribute.String;
     product_Other_Image: Attribute.Media;
+    product_color: Attribute.String;
+    product_type: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
