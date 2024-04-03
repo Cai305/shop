@@ -21,7 +21,8 @@
       "min": 0
     },
     "username": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     }
   }
 }

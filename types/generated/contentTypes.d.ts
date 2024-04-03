@@ -928,7 +928,7 @@ export interface ApiAbCreditAbCredit extends Schema.CollectionType {
         min: 0;
       }> &
       Attribute.DefaultTo<10000>;
-    username: Attribute.String;
+    username: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
