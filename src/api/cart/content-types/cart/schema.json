@@ -20,7 +20,8 @@
       "required": false
     },
     "username": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     }
   }
 }
