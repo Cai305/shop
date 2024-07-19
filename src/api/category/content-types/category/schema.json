@@ -19,7 +19,21 @@
       "type": "uid",
       "targetField": "name"
     },
-    "product_Image": {
+    "category1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tag": {
+      "type": "text"
+    },
+    "category4": {
       "allowedTypes": [
         "images",
         "files",
@@ -29,8 +43,25 @@
       "type": "media",
       "multiple": false
     },
-    "tag": {
-      "type": "text"
+    "category2": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "category3": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
