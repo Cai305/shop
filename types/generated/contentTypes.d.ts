@@ -972,58 +972,32 @@ export interface ApiCartCart extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-    name: 'category';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String;
-    slug: Attribute.UID<'api::category.category', 'name'>;
-    category1: Attribute.Media;
-    tag: Attribute.Text;
-    category4: Attribute.Media;
-    category2: Attribute.Media;
-    category3: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiCheckoutCheckout extends Schema.CollectionType {
   collectionName: 'checkouts';
   info: {
     singularName: 'checkout';
     pluralName: 'checkouts';
     displayName: 'checkout';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    user_id: Attribute.String;
-    products: Attribute.JSON;
-    total_amount: Attribute.Decimal;
+    firstname: Attribute.String;
+    lastname: Attribute.String;
+    email: Attribute.Email;
+    company: Attribute.String;
+    address: Attribute.Text;
+    country: Attribute.String;
+    postcode: Attribute.BigInteger;
+    phone: Attribute.BigInteger;
+    note: Attribute.Text;
+    shippingMethod: Attribute.String;
+    totalAmount: Attribute.Decimal;
+    chargeTotal: Attribute.Decimal;
+    invoicenumber: Attribute.String;
+    customerId: Attribute.String;
+    username: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1378,7 +1352,6 @@ declare module '@strapi/types' {
       'plugin::strapi-stripe.ss-payment': PluginStrapiStripeSsPayment;
       'api::ab-credit.ab-credit': ApiAbCreditAbCredit;
       'api::cart.cart': ApiCartCart;
-      'api::category.category': ApiCategoryCategory;
       'api::checkout.checkout': ApiCheckoutCheckout;
       'api::collection.collection': ApiCollectionCollection;
       'api::combo.combo': ApiComboCombo;
