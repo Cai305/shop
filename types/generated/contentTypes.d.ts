@@ -1226,6 +1226,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
   attributes: {
     product_image: Attribute.Media;
+    product_id: Attribute.String;
     product_title: Attribute.String;
     product_description: Attribute.Text;
     product_code: Attribute.String;
