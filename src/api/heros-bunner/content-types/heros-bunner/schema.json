@@ -4,7 +4,8 @@
   "info": {
     "singularName": "heros-bunner",
     "pluralName": "heros-bunners",
-    "displayName": "heros_bunner"
+    "displayName": "heros_bunner",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +16,14 @@
       "type": "string"
     },
     "image": {
-      "type": "string"
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -1149,13 +1149,14 @@ export interface ApiHerosBunnerHerosBunner extends Schema.CollectionType {
     singularName: 'heros-bunner';
     pluralName: 'heros-bunners';
     displayName: 'heros_bunner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     banner_title: Attribute.String;
-    image: Attribute.String;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
