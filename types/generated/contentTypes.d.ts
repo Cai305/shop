@@ -978,6 +978,7 @@ export interface ApiCheckoutCheckout extends Schema.CollectionType {
     singularName: 'checkout';
     pluralName: 'checkouts';
     displayName: 'checkout';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -986,7 +987,6 @@ export interface ApiCheckoutCheckout extends Schema.CollectionType {
     firstname: Attribute.String;
     lastname: Attribute.String;
     email: Attribute.Email;
-    company: Attribute.String;
     address: Attribute.Text;
     country: Attribute.String;
     postcode: Attribute.BigInteger;
@@ -997,7 +997,16 @@ export interface ApiCheckoutCheckout extends Schema.CollectionType {
     chargeTotal: Attribute.Decimal;
     invoicenumber: Attribute.String;
     customerId: Attribute.String;
-    username: Attribute.String;
+    nearestBranch: Attribute.String;
+    products: Attribute.JSON;
+    deliveryAddress: Attribute.String;
+    city: Attribute.String;
+    deliveryCountry: Attribute.String;
+    deliveryFirstname: Attribute.String;
+    deliveryLastname: Attribute.String;
+    deliveryNote: Attribute.Text;
+    deliveryPhone: Attribute.BigInteger;
+    DeliveryPostCode: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

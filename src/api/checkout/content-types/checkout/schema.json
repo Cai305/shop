@@ -4,7 +4,8 @@
   "info": {
     "singularName": "checkout",
     "pluralName": "checkouts",
-    "displayName": "checkout"
+    "displayName": "checkout",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,9 +20,6 @@
     },
     "email": {
       "type": "email"
-    },
-    "company": {
-      "type": "string"
     },
     "address": {
       "type": "text"
@@ -53,8 +51,35 @@
     "customerId": {
       "type": "string"
     },
-    "username": {
+    "nearestBranch": {
       "type": "string"
+    },
+    "products": {
+      "type": "json"
+    },
+    "deliveryAddress": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "deliveryCountry": {
+      "type": "string"
+    },
+    "deliveryFirstname": {
+      "type": "string"
+    },
+    "deliveryLastname": {
+      "type": "string"
+    },
+    "deliveryNote": {
+      "type": "text"
+    },
+    "deliveryPhone": {
+      "type": "biginteger"
+    },
+    "DeliveryPostCode": {
+      "type": "text"
     }
   }
 }
