@@ -1184,6 +1184,37 @@ export interface ApiHerosBunnerHerosBunner extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomeCategoryHomeCategory extends Schema.CollectionType {
+  collectionName: 'home_categories';
+  info: {
+    singularName: 'home-category';
+    pluralName: 'home-categories';
+    displayName: 'home-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category_name: Attribute.String;
+    category_image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-category.home-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-category.home-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNavbarNavbar extends Schema.CollectionType {
   collectionName: 'navbars';
   info: {
@@ -1369,6 +1400,7 @@ declare module '@strapi/types' {
       'api::credit.credit': ApiCreditCredit;
       'api::hero-video.hero-video': ApiHeroVideoHeroVideo;
       'api::heros-bunner.heros-bunner': ApiHerosBunnerHerosBunner;
+      'api::home-category.home-category': ApiHomeCategoryHomeCategory;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::product.product': ApiProductProduct;
       'api::tproduct.tproduct': ApiTproductTproduct;

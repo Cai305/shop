@@ -26,7 +26,6 @@
     "product_id": {
       "type": "string"
     },
-
     "product_title": {
       "type": "string"
     },

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_categories",
+  "info": {
+    "singularName": "home-category",
+    "pluralName": "home-categories",
+    "displayName": "home-category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category_name": {
+      "type": "string"
+    },
+    "category_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
