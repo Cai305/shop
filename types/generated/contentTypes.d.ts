@@ -910,464 +910,61 @@ export interface PluginStrapiStripeSsPayment extends Schema.CollectionType {
   };
 }
 
-export interface ApiAbCreditAbCredit extends Schema.CollectionType {
-  collectionName: 'ab_credits';
+export interface ApiJobJob extends Schema.CollectionType {
+  collectionName: 'jobs';
   info: {
-    singularName: 'ab-credit';
-    pluralName: 'ab-credits';
-    displayName: 'AbCredit';
-    description: '';
+    singularName: 'job';
+    pluralName: 'jobs';
+    displayName: 'companies';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    user_id: Attribute.String;
-    balance: Attribute.Decimal &
-      Attribute.SetMinMax<{
-        min: 0;
-      }> &
-      Attribute.DefaultTo<10000>;
-    username: Attribute.String & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::ab-credit.ab-credit',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::ab-credit.ab-credit',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCartCart extends Schema.CollectionType {
-  collectionName: 'carts';
-  info: {
-    singularName: 'cart';
-    pluralName: 'carts';
-    displayName: 'cart';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    user_id: Attribute.Integer;
-    cart_product: Attribute.JSON;
-    username: Attribute.String & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::cart.cart', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::cart.cart', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCheckoutCheckout extends Schema.CollectionType {
-  collectionName: 'checkouts';
-  info: {
-    singularName: 'checkout';
-    pluralName: 'checkouts';
-    displayName: 'checkout';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    firstname: Attribute.String;
-    lastname: Attribute.String;
-    email: Attribute.Email;
-    address: Attribute.Text;
-    country: Attribute.String;
-    postcode: Attribute.BigInteger;
-    phone: Attribute.BigInteger;
-    note: Attribute.Text;
-    shippingMethod: Attribute.String;
-    totalAmount: Attribute.Decimal;
-    chargeTotal: Attribute.Decimal;
-    invoicenumber: Attribute.String;
-    customerId: Attribute.String;
-    nearestBranch: Attribute.String;
-    products: Attribute.JSON;
-    deliveryAddress: Attribute.String;
-    city: Attribute.String;
-    deliveryCountry: Attribute.String;
-    deliveryFirstname: Attribute.String;
-    deliveryLastname: Attribute.String;
-    deliveryNote: Attribute.Text;
-    deliveryPhone: Attribute.BigInteger;
-    DeliveryPostCode: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::checkout.checkout',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::checkout.checkout',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCollectionCollection extends Schema.CollectionType {
-  collectionName: 'collections';
-  info: {
-    singularName: 'collection';
-    pluralName: 'collections';
-    displayName: 'collection';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    collection_name: Attribute.String;
-    collection_image1: Attribute.String;
-    collection_image2: Attribute.String;
-    from_price1: Attribute.Decimal;
-    from_price2: Attribute.Decimal;
-    collection_image3: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::collection.collection',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::collection.collection',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiComboCombo extends Schema.CollectionType {
-  collectionName: 'combos';
-  info: {
-    singularName: 'combo';
-    pluralName: 'combos';
-    displayName: 'combo';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    main_image: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::combo.combo',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::combo.combo',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCreditCredit extends Schema.CollectionType {
-  collectionName: 'credits';
-  info: {
-    singularName: 'credit';
-    pluralName: 'credits';
-    displayName: 'credit';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    username: Attribute.String;
-    amount: Attribute.Decimal;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::credit.credit',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::credit.credit',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHeroVideoHeroVideo extends Schema.CollectionType {
-  collectionName: 'hero_videos';
-  info: {
-    singularName: 'hero-video';
-    pluralName: 'hero-videos';
-    displayName: 'hero_video';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    video: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::hero-video.hero-video',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::hero-video.hero-video',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHerosBunnerHerosBunner extends Schema.CollectionType {
-  collectionName: 'heros_bunners';
-  info: {
-    singularName: 'heros-bunner';
-    pluralName: 'heros-bunners';
-    displayName: 'heros_bunner';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    banner_title: Attribute.String;
-    image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::heros-bunner.heros-bunner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::heros-bunner.heros-bunner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHomeCategoryHomeCategory extends Schema.CollectionType {
-  collectionName: 'home_categories';
-  info: {
-    singularName: 'home-category';
-    pluralName: 'home-categories';
-    displayName: 'home-category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    category_name: Attribute.String;
-    category_image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-category.home-category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-category.home-category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiNavbarNavbar extends Schema.CollectionType {
-  collectionName: 'navbars';
-  info: {
-    singularName: 'navbar';
-    pluralName: 'navbars';
-    displayName: 'navbar';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
+    name: Attribute.String;
     logo: Attribute.Media;
-    companyName: Attribute.String;
-    MEN_link: Attribute.String;
-    Standard_Range_link: Attribute.String;
-    Womanlink: Attribute.String;
-    MEN: Attribute.Media;
-    Woman: Attribute.Media;
-    Standard_Range: Attribute.Media;
+    industry: Attribute.String;
+    size: Attribute.String;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::navbar.navbar',
-      'oneToOne',
-      'admin::user'
-    > &
+    createdBy: Attribute.Relation<'api::job.job', 'oneToOne', 'admin::user'> &
       Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::navbar.navbar',
-      'oneToOne',
-      'admin::user'
-    > &
+    updatedBy: Attribute.Relation<'api::job.job', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
 
-export interface ApiProductProduct extends Schema.CollectionType {
-  collectionName: 'products';
+export interface ApiJobbJobb extends Schema.CollectionType {
+  collectionName: 'jobbs';
   info: {
-    singularName: 'product';
-    pluralName: 'products';
-    displayName: 'Product';
-    name: 'product';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    product_image: Attribute.Media;
-    product_id: Attribute.String;
-    product_title: Attribute.String;
-    product_description: Attribute.Text;
-    product_code: Attribute.String;
-    product_fabric: Attribute.String;
-    product_varient: Attribute.Enumeration<
-      ['Ex:', 'morning', 'noon', 'day', 'night']
-    >;
-    product_material: Attribute.String;
-    product_price: Attribute.Decimal;
-    product_primary_class: Attribute.String;
-    product_category: Attribute.String;
-    product_subcategory: Attribute.String;
-    product_subclass: Attribute.String;
-    product_Other_Image: Attribute.Media;
-    product_color: Attribute.String;
-    product_type: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTproductTproduct extends Schema.CollectionType {
-  collectionName: 'tproducts';
-  info: {
-    singularName: 'tproduct';
-    pluralName: 'tproducts';
-    displayName: 'tproduct';
-    description: '';
+    singularName: 'jobb';
+    pluralName: 'jobbs';
+    displayName: 'company job';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Blocks;
-    price: Attribute.Decimal;
-    tag: Attribute.Boolean & Attribute.Required;
+    company: Attribute.String;
+    companyLogo: Attribute.Media;
+    location: Attribute.String;
+    type: Attribute.String;
+    salary: Attribute.String;
+    description: Attribute.Text;
+    requirements: Attribute.JSON;
+    benefits: Attribute.JSON;
+    posted: Attribute.String;
     category: Attribute.String;
-    image: Attribute.Media;
-    subCategory: Attribute.String;
+    experience: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::tproduct.tproduct',
-      'oneToOne',
-      'admin::user'
-    > &
+    createdBy: Attribute.Relation<'api::jobb.jobb', 'oneToOne', 'admin::user'> &
       Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::tproduct.tproduct',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiWatchlistWatchlist extends Schema.CollectionType {
-  collectionName: 'watchlists';
-  info: {
-    singularName: 'watchlist';
-    pluralName: 'watchlists';
-    displayName: 'Watchlist';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    product_name: Attribute.String;
-    user_id: Attribute.String;
-    status: Attribute.String;
-    product_quantity: Attribute.String;
-    product_image: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::watchlist.watchlist',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::watchlist.watchlist',
-      'oneToOne',
-      'admin::user'
-    > &
+    updatedBy: Attribute.Relation<'api::jobb.jobb', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1392,19 +989,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::strapi-stripe.ss-product': PluginStrapiStripeSsProduct;
       'plugin::strapi-stripe.ss-payment': PluginStrapiStripeSsPayment;
-      'api::ab-credit.ab-credit': ApiAbCreditAbCredit;
-      'api::cart.cart': ApiCartCart;
-      'api::checkout.checkout': ApiCheckoutCheckout;
-      'api::collection.collection': ApiCollectionCollection;
-      'api::combo.combo': ApiComboCombo;
-      'api::credit.credit': ApiCreditCredit;
-      'api::hero-video.hero-video': ApiHeroVideoHeroVideo;
-      'api::heros-bunner.heros-bunner': ApiHerosBunnerHerosBunner;
-      'api::home-category.home-category': ApiHomeCategoryHomeCategory;
-      'api::navbar.navbar': ApiNavbarNavbar;
-      'api::product.product': ApiProductProduct;
-      'api::tproduct.tproduct': ApiTproductTproduct;
-      'api::watchlist.watchlist': ApiWatchlistWatchlist;
+      'api::job.job': ApiJobJob;
+      'api::jobb.jobb': ApiJobbJobb;
     }
   }
 }

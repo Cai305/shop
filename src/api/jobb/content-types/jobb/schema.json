@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobbs",
+  "info": {
+    "singularName": "jobb",
+    "pluralName": "jobbs",
+    "displayName": "company job"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "companyLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "requirements": {
+      "type": "json"
+    },
+    "benefits": {
+      "type": "json"
+    },
+    "posted": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    }
+  }
+}
