@@ -1,38 +1,42 @@
 {
-  "name": "dshop",
-  "private": true,
+  "name": "backend",
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
   "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "4.17.1",
-    "@strapi/plugin-i18n": "4.17.1",
-    "@strapi/plugin-users-permissions": "4.17.1",
-    "@strapi/provider-upload-aws-s3": "^4.17.1",
-    "@strapi/provider-upload-cloudinary": "^4.17.1",
-    "@strapi/strapi": "4.17.1",
-    "cloudinary": "^1.41.3",
+    "@strapi/plugin-cloud": "5.22.0",
+    "@strapi/plugin-users-permissions": "5.22.0",
+    "@strapi/provider-upload-cloudinary": "^5.22.0",
+    "@strapi/strapi": "5.22.0",
     "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "strapi-stripe": "^3.4.1",
-    "styled-components": "5.3.3"
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "532dac6b-6886-470e-9c21-8707444cd55f"
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
   },
   "engines": {
-    "node": ">=17.0.0",
+    "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "strapi": {
+    "uuid": "c55f2f00-67a8-4389-96ec-58dacc4717bd",
+    "installId": "cd61078dae05467df2993bb44261bba26ba6db25870fb9ebf3a90f43bcf90dc9"
+  }
 }

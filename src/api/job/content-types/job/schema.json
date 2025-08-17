@@ -4,32 +4,79 @@
   "info": {
     "singularName": "job",
     "pluralName": "jobs",
-    "displayName": "companies"
+    "displayName": "job"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "required": true
     },
-    "logo": {
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "companyLogo": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
       ]
     },
-    "industry": {
-      "type": "string"
+    "location": {
+      "type": "string",
+      "required": true
     },
-    "size": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "salaryRange": {
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
+    },
+    "requirements": {
+      "type": "json",
+      "required": true
+    },
+    "responsibilities": {
+      "type": "json"
+    },
+    "postedDate": {
+      "type": "date"
+    },
+    "applicationDeadline": {
+      "type": "date"
+    },
+    "contactEmail": {
+      "type": "email",
+      "required": true
+    },
+    "applicationLink": {
+      "type": "string"
+    },
+    "experienceLevel": {
+      "type": "string"
+    },
+    "remote": {
+      "type": "string"
+    },
+    "benefits": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string"
     }
   }
 }
